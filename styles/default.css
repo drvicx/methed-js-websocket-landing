@@ -1,0 +1,76 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: Inter, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+button {
+    padding: 0;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+.container {
+    /*border: 1px solid red;*/  /* DEBUG  */
+    max-width: 1180px;          /* 1180+30+30 = 1240 */
+    margin: 0 auto;             /* выравнивание контейнера по центру */
+    padding: 0 30px;            /* добавили отступы слева-справа но теперь их нужно учитывать при вычислении ширины */
+}
+
+/*
+    CSS Медиа-запрос который реализует адаптивную верстку
+    путем переключения указанных элементов на другой набор стилей
+    при достяжении размера окна браузера определенного значения
+    -п: @media (max-width: 1024px) {..}
+        означает что до ширины окна в 1024 пикселя будут действовать стили внутри {..}
+*/
+@media (max-width: 1024px) {
+    .container {
+        /*border: 1px solid blue;*/   /* DEBUG  */
+        max-width: 840px;             /* 780+30+30 = 840 */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        /*border: 1px solid green;*/  /* DEBUG  */
+        max-width: 740;               /* 680+30+30 = 740 */
+        /*padding: 0 20px;*/          /* в уроке этого не было, я решил что отступы 30px слишком большие.. в итоге верстка съехала */
+    }
+}
+
+/* Устройство с совсем маленьким размером экрана */
+@media (max-width: 480px) {
+    .container {
+        /*border: 1px solid red;*/  /* DEBUG  */
+        padding: 0 10px;            /* делаем отступы слева-справа совсем небольшими */
+    }
+}

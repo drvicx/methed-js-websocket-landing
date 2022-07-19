@@ -1,0 +1,51 @@
+/* размещаем элементы списка внутри контейнера по горизонтали друг-за другом с отступами */
+.navigation__list {
+    display: flex;
+    align-items: center;
+}
+
+.navigation__item {
+    margin-right: 43px; 
+}
+
+/* убираем отступ справа у последнего элемента */
+.navigation__item:last-child {
+    margin-right: 0; 
+}
+
+/*
+    CSS Медиа-запрос который реализует адаптивную верстку
+    путем переключения указанных элементов на другой набор стилей
+    при достяжении размера окна браузера определенного значения
+    -п: @media (max-width: 768px) {..}
+        означает что до ширины окна в 768 пикселя будут применятся стили в {..};
+*/
+@media (max-width: 768px) {
+    .navigation__list {
+        padding: 16px 30px;
+        margin: 0 auto;
+        max-width: 740px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation__list {
+        padding-left: 15px;
+        padding-right: 15px;
+        /* выстраиваем элементы меню вертикально и выравниваем их по левому краю */
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* настраиваем отступы у меню */
+    .navigation__item {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    /* у самого нижнего элемента меню убираем отступ снизу */
+    .navigation__item:last-child {
+        margin-bottom: 0;
+    }
+
+}
