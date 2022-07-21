@@ -117,6 +117,13 @@
     color: #55C2FF;
 }
 
+/* небольшой участок под кнопокой регистрации для вывода диагностических сообщений */
+.modal__debug-message {
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+}
+
 /* У меня при ширине меньше 660px начиналась дичь и блоки находили друг-на друга */
 @media (max-width: 660px) {
 
