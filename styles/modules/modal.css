@@ -1,0 +1,195 @@
+.modal {
+    /*margin: 35px 0;*/
+    margin: 40px 0;
+    /* позиционируем окно по центру родительского компонента (оверлея) */
+    display: inline-block;
+    vertical-align: middle;
+    /* курсор оверляя в виде пальца в модальном окне нам не нужен */
+    cursor: default;
+    /* текстовый заголовок H2 окна будет выравнен по левому краю, а остальное по центру как указано на уровне оверлея */
+    text-align: left;
+    /* возвращаем дефолтное поведение выталкивания элементов пробелами (?) */
+    white-space: normal;
+    /* скрываем окно по-умолчанию */
+    visibility: hidden;
+    opacity: 0;
+    /* опять анимация причем и на открытие и на закрытие (проверить) */
+    transition: opacity 0.36s ease-in-out, visibility 0.36s ease-in-out;
+    width: 100%;
+    max-width: 688px;
+}
+
+.modal_open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal__container {
+    /* это нужно чтобы спозиционировать крестик закрытия формы в правом-верхнем углу */
+    position: relative;
+    /* позиционирование Заголовка по центру v2 -- другие элементы также позиционируются по центру */
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    background-color: #FFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    padding: 20px 20px 45px; 
+}
+
+/* Заголовок модального окна */
+.modal__title {
+    /*color: red;*/             /* DEBUG */
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    color: #55C2FF;
+    max-width: 400px;
+    /* позиционирование Заголовка по центру v1 -- другие элементы позиционируются по своему */
+    margin: 0 auto 20px;
+}
+
+.modal__person {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    margin-bottom: 27px; 
+}
+
+.modal__label {
+    display: block;                 /* некоторые элементы по-умолчанию не блочного типа */
+    flex-grow: 1;                   /* растягивание элементов на максимально доступную ширину модального окна */
+    width: 100px;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    color: #858585;
+    margin-right: 16px;
+}
+
+/* У последнего элемента отступ справа должен быть нулевой */
+.modal__label:last-child {
+    margin-right: 0;
+}
+
+/* Поля ввода данных пользователя */
+.modal__input {
+    display: block;
+    width: 205px;                   /* тут стояло 100px а по Figma ширина 205px */
+    border: 1px solid #68B7FF;
+    border-radius: 8px;
+    height: 36px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-transform: uppercase;      /* сам установил - так красивее */
+}
+
+/* Кнопка Регистрации */
+.modal__order {
+    display: block;
+    margin: 0 auto;
+    max-width: 232px;
+    width: 100%;
+    padding: 11px;
+    background: #55C2FF;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFF;
+}
+
+/* Кнопка в виде крестика в правом-верхнем углу закрытия модального окна */
+.modal__close {
+    /* помещаем кнопку в правый верхний угол относительно родительского блока у которого установлено "position: relative" */
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    border: none;
+    background-color: transparent;
+    line-height: 0;                     /* убираем небольшой отступ снизу который есть у всех SVG */
+    color: #55C2FF;
+}
+
+/* небольшой участок под кнопокой регистрации для вывода диагностических сообщений */
+.modal__debug-message {
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+}
+
+/* У меня при ширине меньше 660px начиналась дичь и блоки находили друг-на друга */
+@media (max-width: 660px) {
+
+    .modal__container {
+        padding: 20px 30px 36px;  /* подобрал размеры сам визуально */
+    }
+
+    .modal__person {
+        /*border: 1px solid red;*/      /* DEBUG */
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .modal__label {
+        /*border: 1px solid blue;*/      /* DEBUG */
+        display: block;
+        margin-bottom: 10px;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .modal__label:last-child {
+        margin-bottom: 10px;
+    }
+
+    .modal__input {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .modal__container {
+        padding: 20px 13px 36px;
+    }
+
+    .modal__title {
+        /*color: red;*/                 /* DEBUG */
+        font-size: 20px;                /* Fixed: сам подобрал */
+        line-height: 27px;
+        margin-bottom: 10px;
+    }
+
+    .modal__person {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .modal__label {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .modal__label:last-child {
+        margin-bottom: 0;
+    }
+
+    .modal__close {
+        right: 0;
+        /* помещаем кнопку закрытия окна над окном в првом-верхем углу */
+        /* способ 1: зная что размер кнопки 32x32 и отступ снизу должен быть 2 px - перемещем кнопка на минус 34 пикселя, т.е вверх */
+        /*top: -34px;*/
+        /* способ 2: динамически вычисляем расположение где -100% означает над основным блоком */
+        top: 0;
+        /*transform: translateY(calc(-100%));*/
+        transform: translateY(calc(-100% - 2px));
+    }
+}

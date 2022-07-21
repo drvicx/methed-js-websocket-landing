@@ -53,6 +53,7 @@
     }
 
     .header__navigation_open {
-        transform: translateY(100%);
+        /*transform: translateY(100%);*/              /* когда отображается меню. появляется тонкая 1px полоска снизу */
+        transform: translateY(calc(100% - 1px));      /* убираем эту 1px полоску */
     }
 }
