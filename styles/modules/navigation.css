@@ -22,19 +22,28 @@
 */
 @media (max-width: 768px) {
     .navigation__list {
-        padding: 16px 30px;
+        /*padding: 16px 30px;*/
         margin: 0 auto;
         max-width: 740px;
+    }
+
+    .navigation__list_padding {
+        padding: 16px 30px;
     }
 }
 
 @media (max-width: 480px) {
     .navigation__list {
-        padding-left: 15px;
-        padding-right: 15px;
+        /*padding-left: 15px;*/
+        /*padding-right: 15px;*/
         /* выстраиваем элементы меню вертикально и выравниваем их по левому краю */
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .navigation__list_padding {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     /* настраиваем отступы у меню */
