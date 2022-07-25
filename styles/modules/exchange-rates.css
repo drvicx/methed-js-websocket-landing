@@ -1,0 +1,71 @@
+.exchange-rates {
+    /*color: red;*/                 /* TEST */
+    padding: 10px 13px 30px 13px;
+    background-color: #E4F2FF;
+    border-radius: 10px;
+}
+
+.exchange-rates__title {
+    font-family: 'IBM Plex Sans';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 120%;
+    color: #265D77;
+    margin-bottom: 20px;
+}
+
+.exchange-rates__list {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    color: #265D77;
+}
+
+.exchange-rates__item {
+    /*color: red;*/                /* TEST */
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.exchange-rates__item:last-child {
+    /*color: red;*/                /* TEST */
+    margin-bottom: 0;
+}
+
+/* Псевдоэлемент для размещения Иконок направления изменения валюты вверх/зеленый-вниз/красный */
+.exchange-rates__item:after {
+    content: '';
+    display: block;
+    width: 9px;
+    height: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* Иконки направления изменения валюты вверх/зеленый-вниз/красный */
+/* свойства "background-position", "background-repeat", "background-size" наследуются отродителя */
+.exchange_rates__item_up:after {
+    background-image: url('../../images/up.svg');
+}
+
+.exchange_rates__item_down:after {
+    background-image: url('../../images/down.svg');
+}
+
+.exchange-rates__currency {
+    /*color: red;*/             /* TEST */
+    margin-right: auto;         /* отталкиваем элемент со значением курса к правому краю блока */
+}
+
+.exchange-rates__value {
+    /*color: red;*/             /* TEST */
+    display: block;
+    margin-right: 5px;         /* отступ до псевдо-элемента с иконкой направления курса */
+}
+
+
+/*
+about-us__exchange-rates
+*/

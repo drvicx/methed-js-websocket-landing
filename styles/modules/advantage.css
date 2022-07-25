@@ -1,0 +1,95 @@
+.advantage__list-btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 54px;
+    /*border: 1px solid red;*/
+}
+
+.advantage__button {
+    width: 180px;
+    height: 47px;
+    background-color: #68B7FF;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: #FFF;
+    border: 1px solid transparent;
+    /* Опять анимация.. потом отключу ибо бесит */
+    transition-property: border-color, background-color;
+    transition-duration: 0.16s;
+    transition-timing-function: ease-in-out;
+}
+
+/* Кнопка в нажатом состоянии (активная) означающая что выбран этот раздел */
+.advantage__button_active,
+.advantage__button:active {
+    background-color: #1C88EB;
+    /*border: 1px solid #1C88EB;*/
+    border-color: #1C88EB;
+}
+
+.advantage__button:hover {
+    /*border: 1px solid #1C88EB;*/
+    border-color: #1C88EB;
+}
+
+/* Табы с контентом (как li-элемент списка ul) */
+.advantage__item-content {
+    /*border: 1px solid red;*/      /* TEST */
+    max-width: 640px;
+    margin: 0 auto;                 /* выравниваем блок по центру по горизонтали  */
+    display: none;                  /* не выбранный Таб не отображается */
+    gap: 40px;                      /* расстояние между элементами в flex */
+    font-family: 'IBM Plex Sans';
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 29px;
+}
+
+/* Активный/Выбранный Таб путем клика на соотв. Кнопке */
+.advantage__item-content_active {
+    display: flex;
+}
+
+/* Псевдо-элемент для отображения иконки раздела на Табе слева от текста */
+/* :before - элемент распологается слева, :after - справа от родителя */
+.advantage__item-content:before {
+    content: '';
+    display: block;
+    flex-shrink: 0;                     /* запрещаем flex-элементу сжиматься, чтобы "width" работало как указано */
+    width: 100px;
+    height: 100px;
+    /*background-color: #1C88EB;*/      /* TEST */ 
+    background-position: center;        /* при сжатии размера блока всегда отображать иконку по центру блока */
+    background-repeat: no-repeat;       /* выводить иконку только 1 раз, т.е не повторять ее по-умолчанию */
+    background-size: contain;           /* автоматически растягивать иконку по размеру блока 100x100 */
+
+}
+
+/* Размещаем иконку в Таб "Удобство" */
+/* before необходимо указывать чтобы иконка попала именно в левыый псево-блок перед текстом) */
+.advantage__item-content_convenience:before {
+    background-image: url('../../images/convenience.svg');
+}
+
+/* Размещаем иконку в Таб "Скорость" */
+.advantage__item-content_speed:before {
+    background-image: url('../../images/speed.svg');
+}
+
+/* Размещаем иконку в Таб "Качество" */
+.advantage__item-content_quality:before {
+    background-image: url('../../images/quality.svg');
+}
+
+/* Размещаем иконку в Таб "Надежность" */
+.advantage__item-content_security:before {
+    background-image: url('../../images/security.svg');
+}
+
+
+/*
+advantage__list-content
+*/
