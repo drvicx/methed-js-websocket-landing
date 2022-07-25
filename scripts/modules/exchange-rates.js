@@ -10,7 +10,10 @@ const exchangeRatesList = document.querySelector('.exchange-rates__list');
 // Веб-приложение Сервиса написано на NodeJS и размещено на облачном VPS Heroku
 // url-сервиса: ws://web-socket-current.herokuapp.com
 //
-const socket = new WebSocket('ws://web-socket-current.herokuapp.com');
+//!BUG: на GitHub Pages это работать не будет т.к требуется secure WebSocket подключение с HTTPS страницы;
+//const socket = new WebSocket('ws://web-socket-current.herokuapp.com');
+//*Fix: теперь подключение происходит по "secure" протоколу
+const socket = new WebSocket('wss://web-socket-current.herokuapp.com');
 
 
 /**
