@@ -1,0 +1,36 @@
+.about-us {
+    /*color: red;*/           /* TEST */
+    padding: 40px 0;          /* отступы сверху и снизу, слева-справа отступов нет */
+}
+
+/* Заголовок раздела "Почему выбирают нас?" */
+.about-us__title {
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 53px;
+    color: #55C2FF;
+    margin-bottom: 34px;
+}
+
+/* Все блоки под надписью "Почему выбирают нас?" */
+.about-us__container {
+    /*border: 1px solid red;*/          /* TEST */
+    display: flex;                      /* включаем flex-режим отображения  */
+    justify-content: space-between;     /* ориентация блоков - по горизонтали с разделением пустым местом (space) */
+    gap: 20px;                          /* расстояние между блоками */
+}
+
+/* Блок контента табов  */
+.about-us__advantage {
+    /*color: red;*/                     /* TEST */
+    flex-grow: 1;                       /* разрешаем блоку растягиваться по горизонтали */
+    width: 100%;                        /* растягиваем блок по горизонтали */
+}
+
+/* Блок "Изменение курсов" */
+.about-us__exchange-rates {
+    /*border: 1px solid red;*/          /* TEST */
+    /*color: red;*/                     /* TEST */
+    /*max-width:  380px;*/              /* вот это свойство некорректо: блок уже чем указано..  */
+    width: 380px;                       /* а вот так все норм и блок нормальной ширины */
+}    

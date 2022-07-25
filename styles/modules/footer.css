@@ -1,0 +1,63 @@
+.footer {
+    background-color: #08475E;
+    padding-top: 40px;
+    padding-bottom: 42px;
+    color: #fff; 
+}
+
+.footer__container {
+    display: grid;
+    gap: 34px 10px;
+    /* название элементов в grid и их оносительное расположение */
+    /* . означает зона в которой ничего нет */
+    grid-template-areas:
+        "logo navigation navigation"
+        "copyright . design";
+}
+
+/* Указв идентификаторы grid-элементов в "grid-area" определяем стили для них */
+.footer__logo {
+    /*border: 1px solid red;*/      /* TEST */
+    grid-area: logo;
+}
+
+.footer__navigation {
+    /*color: red;*/                 /* TEST */
+    grid-area: navigation;  
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.footer__copyright {
+    /*color: red;*/                 /* TEST */
+    grid-area: copyright;
+    justify-self: start;            /* раполагаем элемент в началу блока: прижимаем к левой стороне */
+    font-size: 12px;
+    line-height: 130%;
+}
+
+.footer__design {
+    /*color: red;*/                 /* TEST */
+    grid-area: design;
+    justify-self: end;              /* раполагаем элемент в конце блока: прижимаем к правой стороне */
+    font-size: 12px;
+    line-height: 130%;
+}
+
+@media (max-width: 768px) {
+    .footer__navigation {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__container {
+        /*border: 1px solid red;*/  /* TEST */
+        
+        /* изменяем сетку grid с размера 3x2 на 2x2 */
+        grid-template-areas: 
+            "logo navigation"
+            "copyright design";        
+    }
+}

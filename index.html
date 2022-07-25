@@ -29,9 +29,9 @@
 
         <!--<nav class="header__navigation navigation header__navigation_open">-->
             <nav class="header__navigation navigation">
-                <ul class="navigation__list">
+                <ul class="navigation__list navigation__list_padding">
                     <li class="navigation__item">
-                        <a href="#" class="navigation__link">Почему выбирают нас?</a>
+                        <a href="#about-us" class="navigation__link">Почему выбирают нас?</a>
                     </li>
                     <li class="navigation__item">
                         <a href="#" class="navigation__link">Частые вопросы</a>
@@ -49,6 +49,69 @@
                 <button class="hero__btn">Зарегистрироваться</button>
             </div><!--container-->
         </section>
+
+        <section class="about-us" id="about-us">
+            <div class="container">
+                <h2 class="about-us__title">Почему выбирают нас?</h2>
+
+                <div class="about-us__container">
+
+                    <div class="about-us__advantage advantage">
+
+                        <!--Кнопки для переключения Табов-->
+                        <ul class="advantage__list-btn">
+                            <li class="advantage__item">
+                                <button class="advantage__button advantage__button_active">Удобство</button>
+                            </li>
+                            <li class="advantage__item">
+                                <button class="advantage__button">Скорость</button>
+                            </li>
+                            <li class="advantage__item">
+                                <button class="advantage__button">Качество</button>
+                            </li>
+                            <li class="advantage__item">
+                                <button class="advantage__button">Надежность</button>
+                            </li>
+                        </ul>
+
+                        <!--Ифно-блоки Табов-->
+                        <ul class="advantage__list-content">
+                            <li class="advantage__item-content advantage__item-content_convenience advantage__item-content_active">Наш сервис обмена криптовалюты Crypto интуитивно понятен и удобен в использовании. С нами просто.</li>
+                            <li class="advantage__item-content advantage__item-content_speed">У нас самая быстрая скорость по обмену криптовалюты по подобным сервисам в России</li>
+                            <li class="advantage__item-content advantage__item-content_quality">Нашу платформу выбирают миллионы людей</li>
+                            <li class="advantage__item-content advantage__item-content_security">Ваши пароли под надежной защитой. Нас невозможно взломать</li>
+                        </ul>
+                    </div><!--about-us__advantage-->
+
+                    <!--Блок курсов валют-->
+                    <div class="about-us__exchange-rates exchange-rates">
+                    <!--<h3 class="exchange-rates__title">Изменение курсов в режиме реального времени</h3>-->
+                        <h3 class="exchange-rates__title">Курсы валют</h3>
+
+                        <ul class="exchange-rates__list">
+                            <li class="exchange-rates__item exchange_rates__item_up">
+                                <span class="exchange-rates__currency">RUB/AUT</span>
+                                <span class="exchange-rates__value">25.59</span>
+                            </li>
+                            <li class="exchange-rates__item exchange_rates__item_up">
+                                <span class="exchange-rates__currency">HKD/BYR</span>
+                                <span class="exchange-rates__value">27.76</span>
+                            </li>
+                            <li class="exchange-rates__item exchange_rates__item_down">
+                                <span class="exchange-rates__currency">AUD/CNY</span>
+                                <span class="exchange-rates__value">72.68</span>
+                            </li>
+                            <li class="exchange-rates__item exchange_rates__item_up">
+                                <span class="exchange-rates__currency">JPY/GBP</span>
+                                <span class="exchange-rates__value">32.96</span>
+                            </li>
+                        </ul>
+                    </div><!--about-us__exchange-rates-->
+
+                </div><!--about-us__container-->
+            </div><!--container-->
+        </section><!--about-us-->
+
     </main>
 
     <!--Оверлей который перекрывает основной Интерфейс на котором будут отображаться модальные окна-->
@@ -97,7 +160,25 @@
         </div><!--Окно Регистрации-->
     </div><!--overlay-->
 
-    <footer></footer>
+    <footer class="footer">
+        <div class="container footer__container">
+            <img src="images/logo.svg" alt="Логотип Crypto" class="footer__logo">
+
+            <div class="footer__navigation navigation">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a href="#about-us" class="navigation__link">Почему выбирают нас?</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#" class="navigation__link">Частые вопросы</a>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="footer__copyright">© Crypto, 2022</p>
+            <a class="footer__design" href="https://t.me/JohnDoe1980" target="_blank">@JohnDoe</a>
+        </div>
+    </footer>
 
 </body>
 </html>
